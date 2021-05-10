@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "361bdb71-b539-43c2-a525-cb3afb68e2b4",
+		"name": "FruitShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List the product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.predic8.de/shop/products/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"path": [
+						"shop",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new product for an existing vendor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Apricot\",\r\n  \"price\":3.99,\r\n  \"category\": \"Fruits\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.predic8.de:443/shop/vendors/672/products/?id=672",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"port": "443",
+					"path": [
+						"shop",
+						"vendors",
+						"672",
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "672"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the name and price of the product",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Blueberries\",\r\n  \"price\": 6.99,\r\n  \"category_url\": \"/shop/categories/Fruits\",\r\n  \"vendor_url\": \"/shop/vendors/501\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.predic8.de:443/shop/products/105?id=105",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"port": "443",
+					"path": [
+						"shop",
+						"products",
+						"105"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "105"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a photo of the product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "blueberry_Image",
+							"type": "file",
+							"src": "blueberries.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.predic8.de:443/shop/products/105/photo",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"port": "443",
+					"path": [
+						"shop",
+						"products",
+						"105",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Display the photo for the product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.predic8.de:443/shop/products/7/photo",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"port": "443",
+					"path": [
+						"shop",
+						"products",
+						"7",
+						"photo"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.predic8.de:443/shop/products/105",
+					"protocol": "https",
+					"host": [
+						"api",
+						"predic8",
+						"de"
+					],
+					"port": "443",
+					"path": [
+						"shop",
+						"products",
+						"105"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "57",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
